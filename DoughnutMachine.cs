@@ -8,6 +8,7 @@ namespace Valea_Maria_Alexandra_Lab2
     class DoughnutMachine
     {
         private DoughnutType mFlavor;
+
         public DoughnutType Flavor
         {
             get
@@ -25,7 +26,9 @@ namespace Valea_Maria_Alexandra_Lab2
         private void InitializeComponent()
         {
             this.doughnutTimer = new DispatcherTimer();
+
             this.doughnutTimer.Tick += new System.EventHandler(this.doughnutTimer_Tick);
+
         }
         public DoughnutMachine()
         {
@@ -52,6 +55,7 @@ namespace Valea_Maria_Alexandra_Lab2
         }
         public void MakeDoughnuts(DoughnutType dFlavor)
         {
+
             Flavor = dFlavor;
             switch (Flavor)
             {
@@ -63,6 +67,7 @@ namespace Valea_Maria_Alexandra_Lab2
             }
             doughnutTimer.Start();
         }
+
     }
     public enum DoughnutType
     {
@@ -86,15 +91,16 @@ namespace Valea_Maria_Alexandra_Lab2
                 mFlavor = value;
             }
         }
-        private readonly DateTime mTimeOfCreation;
+        private DateTime mTimeOfCreation;
         public DateTime TimeOfCreation
         {
             get
             {
                 return mTimeOfCreation;
             }
+
         }
-        public Doughnut(DoughnutType aFlavor)
+        public Doughnut(DoughnutType aFlavor) // constructor
         {
             mTimeOfCreation = DateTime.Now;
             mFlavor = aFlavor;
